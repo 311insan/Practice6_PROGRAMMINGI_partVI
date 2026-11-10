@@ -40,7 +40,7 @@ public class SupportSystem
         while(!finished) {
             String input = reader.getInput();
 
-            if(input.trim().equals("bye")) {
+            if(input.trim().startsWith("bye")) {
                 finished = true;
             }
             else {
@@ -69,6 +69,6 @@ public class SupportSystem
      */
     private void printGoodbye()
     {
-        System.out.println("byebye :D");
+        System.out.println("Nice talking to you. Bye...");
     }
 }
