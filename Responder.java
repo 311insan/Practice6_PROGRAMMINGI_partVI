@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * The responder class represents a response generator object.
@@ -32,9 +33,14 @@ public class Responder
         return "This isn't actually a tech support thing btw I lied. Also I have no idea what you just said.";
     }
     
-    public String generateResponse(String word){
-        String response = (responseMap.get(word) != null)? responseMap.get(word) : pickDefaultResponse();
-        return response;
+    public String generateResponse(HashSet<String> words){
+        for(String word : words){
+            String response = (responseMap.get(word) != null)? responseMap.get(word) : pickDefaultResponse();
+            if(response != null){
+                return response;
+            }
+        }
+        return pickDefaultResponse();
     }
 }
 
