@@ -71,4 +71,9 @@ public class SupportSystem
     {
         System.out.println("Nice talking to you. Bye...");
     }
+    
+    public static void main(String[] args){
+        SupportSystem techSupport = new SupportSystem();
+        techSupport.start();
+    }
 }
